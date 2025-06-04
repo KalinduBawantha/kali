@@ -1,0 +1,97 @@
+dob and massge
+
+String Name = textBox1.Text;
+DateTime DOB = dateTimePicker1.Value;
+DateTime currentdate = DateTime.Now;
+int age = currentdate.Year - DOB.Year;
+
+string message = $"Name is {Name} \n" + $"Date of Birth is {DOB} \n" + $"Age is {age}";
+string title = "Submitted Details";
+MessageBoxIcon icon = MessageBoxIcon.Information;
+MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+DialogResult result = MessageBox.Show(message, title, buttons,icon);
+
+
+
+image 
+
+
+OpenFileDialog openFileDialog = new OpenFileDialog();
+openFileDialog.Filter = "Image Files |*.jpg;*jpeg;*png";
+
+if (openFileDialog.ShowDialog() == DialogResult.OK)
+{
+    pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+}
+
+
+
+
+=
+
+switch (operation)
+{
+    case "+":
+        textBox1.Text = (value + double.Parse(textBox1.Text)).ToString();
+        break;
+
+    case "-":
+        textBox1.Text = (value - double.Parse(textBox1.Text)).ToString();
+        break;
+
+    case "/":
+        textBox1.Text = (value / double.Parse(textBox1.Text)).ToString();
+        break;
+
+    case "*":
+        textBox1.Text = (value * double.Parse(textBox1.Text)).ToString();
+        break;
+
+
+}
+
+
+numbers
+
+if((textBox1.Text == "0") || (operationPressed)) {
+    textBox1.Clear();
+    operationPressed = false;
+}
+
+Button button = (Button)sender;
+textBox1.Text = textBox1.Text + button.Text;
+
++
+if (!operationPressed)
+{
+    Button button = (Button)sender;
+    operation = button.Text;
+    value = double.Parse(textBox1.Text);
+    textBox1.Text = operation;
+    operationPressed = true;
+}
+
+clear
+
+ textBox1.Text = "0";
+ value = 0;
+
+.
+
+ if (!textBox1.Text.Contains("."))
+ {
+     textBox1.Text = textBox1.Text + ".";
+
+ }
+
+
+age cal
+
+ DateTime birthday = dateTimePicker1.Value;  
+ DateTime currentdate = DateTime.Now;
+
+ int age = currentdate.Year - birthday.Year;
+
+ label1.Text = age.ToString();
+
+            
